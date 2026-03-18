@@ -1,0 +1,17 @@
+# XCSC Tushare MCP HTTP 服务器依赖列表
+# 这些依赖是运行 MCP 服务器所必需的第三方库
+
+# FastMCP 框架：MCP 服务器开发框架，提供工具注册、HTTP 传输等功能
+fastmcp>=2.3.0
+
+# XCSC Tushare：湘财证券金融数据接口库，用于获取股票、基金、期货等金融数据
+xcsc-tushare>=1.0.0
+
+# Pandas：数据处理和分析库，用于处理 API 返回的金融数据
+pandas>=2.0.0
+
+# Uvicorn：高性能 ASGI 服务器，用于运行 HTTP 服务
+uvicorn>=0.30.0
+
+# Starlette：轻量级 ASGI 工具包，用于开发认证中间件
+starlette>=0.37.0
