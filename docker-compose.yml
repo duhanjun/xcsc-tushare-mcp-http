@@ -1,0 +1,68 @@
+# XCSC Tushare MCP HTTP Server Docker Compose 配置
+# 使用说明:
+# 1. 设置环境变量: export XCSC_TUSHARE_TOKEN="your_token"
+# 2. 启动服务: docker-compose up -d
+# 3. 查看日志: docker-compose logs -f
+# 4. 停止服务: docker-compose down
+
+version: '3.8'
+
+services:
+  xcsc-tushare-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: xcsc-tushare-mcp-http:latest
+    container_name: xcsc-tushare-mcp-server
+    
+    # 端口映射
+    ports:
+      - "8000:8000"
+    
+    # 环境变量
+    environment:
+      # 必填: XCSC Tushare API Token
+      - XCSC_TUSHARE_TOKEN=${XCSC_TUSHARE_TOKEN}
+      
+      # 可选: 服务器配置
+      - XCSC_TUSHARE_SERVER=${XCSC_TUSHARE_SERVER:-http://tushare.xcsc.com:7172}
+      - XCSC_ENV=${XCSC_ENV:-prd}
+      - XCSC_TUSHARE_TIMEOUT=${XCSC_TUSHARE_TIMEOUT:-60}
+      
+      # 可选: MCP 服务器配置
+      - MCP_HOST=${MCP_HOST:-0.0.0.0}
+      - MCP_PORT=${MCP_PORT:-8000}
+      - MCP_PATH=${MCP_PATH:-/mcp}
+      - MCP_NAME=${MCP_NAME:-xcsc-tushare-mcp-http}
+      
+      # 可选: 认证配置
+      - MCP_API_KEY=${MCP_API_KEY}
+      - MCP_AUTH_ENABLED=${MCP_AUTH_ENABLED:-true}
+      - MCP_LOG_LEVEL=${MCP_LOG_LEVEL:-INFO}
+    
+    # 健康检查
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/mcp')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    
+    # 重启策略
+    restart: unless-stopped
+    
+    # 资源限制
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+
+# 可选: 使用外部网络
+# networks:
+#   default:
+#     external:
+#       name: my-network
