@@ -1,15 +1,10 @@
-# XCSC Tushare MCP HTTP 服务器项目配置
-# 本项目是基于 FastMCP 框架开发的 MCP 服务器，通过 HTTP 协议提供湘财证券金融数据接口
-
 [build-system]
-# 构建系统配置：使用 setuptools 和 wheel 进行打包
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-# 项目基本信息
 name = "xcsc-tushare-mcp-http"
-version = "0.1.0"
+version = "1.0.0"
 description = "XCSC Tushare MCP Server with HTTP transport for financial data"
 readme = "README.md"
 license = "MIT"
@@ -17,39 +12,34 @@ requires-python = ">=3.10"
 authors = [
     {name = "HanjunDu", email = "hanjun.du@outlook.com"}
 ]
-# 关键词，用于 PyPI 搜索和分类
-keywords = ["xcsc-tushare", "mcp", "financial", "stock", "http"]
-# 项目分类器，用于 PyPI 展示
+keywords = ["xcsc-tushare", "mcp", "financial", "stock", "http", "tushare"]
 classifiers = [
-    "Development Status :: 3 - Alpha",  # 开发状态：Alpha 版本
-    "Intended Audience :: Developers",  # 目标用户：开发者
-    "Intended Audience :: Financial and Insurance Industry",  # 目标用户：金融保险行业
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
-    "Topic :: Office/Business :: Financial",  # 主题：金融商业
-    "Topic :: Software Development :: Libraries :: Python Modules",  # 主题：软件开发库
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-# 项目依赖：运行本项目所需的第三方库
 dependencies = [
-    "fastmcp>=2.3.0",      # FastMCP 框架：MCP 服务器开发框架
-    "xcsc-tushare>=1.0.0", # XCSC Tushare：湘财证券金融数据接口
-    "pandas>=2.0.0",       # Pandas：数据处理和分析库
-    "uvicorn>=0.30.0",     # Uvicorn：ASGI 服务器，用于运行 HTTP 服务
-    "starlette>=0.37.0",   # Starlette：ASGI 工具包，用于中间件开发
+    "fastmcp>=2.3.0",
+    "xcsc-tushare>=1.0.0",
+    "pandas>=2.0.0",
+    "uvicorn>=0.30.0",
+    "starlette>=0.37.0",
 ]
 
 [project.optional-dependencies]
-# 可选依赖：开发时需要的工具
 dev = [
-    "build",   # 构建工具：用于打包项目
-    "twine",   # 发布工具：用于上传到 PyPI
+    "build",
+    "twine",
 ]
 
 [project.scripts]
-# 命令行脚本配置：安装后可通过命令行直接运行
 xcsc-tushare-mcp-http = "xcsc_tushare_mcp_http.server:main"
 
 [project.urls]
@@ -58,10 +48,8 @@ Documentation = "https://github.com/duhanjun/xcsc-tushare-mcp-http#readme"
 Repository = "https://github.com/duhanjun/xcsc-tushare-mcp-http.git"
 Issues = "https://github.com/duhanjun/xcsc-tushare-mcp-http/issues"
 
-[tool.setuptools]
-# setuptools 配置：指定要包含的包
-packages = ["xcsc_tushare_mcp_http", "xcsc_tushare_mcp_http.tools"]
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.setuptools.package-data]
-# 包数据配置：包含类型提示标记文件
-xcsc_tushare_mcp_http = ["py.typed"]
+xcsc_tushare_mcp_http = ["py.typed", "api_metadata.json", "references/**/*.md"]
