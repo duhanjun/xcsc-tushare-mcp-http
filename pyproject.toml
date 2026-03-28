@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "xcsc-tushare-mcp-http"
-version = "1.0.0"
+version = "1.0.1"
 description = "XCSC Tushare MCP Server with HTTP transport for financial data"
 readme = "README.md"
 license = "MIT"

@@ -13,7 +13,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: xcsc-tushare-mcp-http:latest
-    container_name: xcsc-tushare-mcp-server
+    container_name: xcsc-tushare-mcp-http
     
     # 端口映射
     ports:

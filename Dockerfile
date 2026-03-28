@@ -1,27 +1,19 @@
 # XCSC Tushare MCP HTTP Server Docker Image
-# 基于 Python 3.12 官方镜像
+
 FROM python:3.12-slim
 
-# 设置工作目录
 WORKDIR /app
+
+# 配置 pip 使用国内镜像源
+RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && \
+    pip config set install.trusted-host mirrors.aliyun.com
+
+# 直接从 PyPI 安装
+RUN pip install --no-cache-dir xcsc-tushare-mcp-http
 
 # 设置环境变量
 ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=1
-
-# 安装系统依赖
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    gcc \
-    && rm -rf /var/lib/apt/lists/*
-
-# 复制项目文件
-COPY pyproject.toml README.md LICENSE ./
-COPY src/ ./src/
-
-# 安装 Python 依赖
-RUN pip install --no-cache-dir -e .
+    PYTHONUNBUFFERED=1
 
 # 暴露服务端口
 EXPOSE 8000

@@ -23,12 +23,10 @@ xcsc-tushare-mcp-http/
 │       ├── tools.py               # 3 个核心工具
 │       ├── config.py              # 配置管理
 │       ├── auth.py                # 认证中间件
-│       ├── cache.py               # 缓存模块
-│       ├── logger.py              # 日志模块
 │       ├── metadata.py            # 元数据生成和加载
 │       ├── api_metadata.json      # 缓存的 API 元数据
 │       ├── py.typed               # 类型提示标记
-│       └── references/            # API 文档源文件（91 个 .md）
+│       └── references/            # API 文档源文件（约 90 个 .md）
 │           ├── 债券/
 │           ├── 公募基金/
 │           ├── 共同基金/
@@ -137,7 +135,7 @@ python src/xcsc_tushare_mcp_http/server.py
 
 ```
 正在启动 xcsc-tushare-mcp-http...
-版本: 1.0.0
+版本: 1.0.1
 XCSC Tushare Token: your_toke***
 运行环境: prd
 服务地址: http://0.0.0.0:8000/mcp
@@ -174,7 +172,7 @@ API Key: xxxxxxxx...xxxx
 ```json
 {
   "success": true,
-  "total_apis": 90,
+  "total_apis": 91,
   "data": {
     "stock_basic": {
       "api_name": "stock_basic",

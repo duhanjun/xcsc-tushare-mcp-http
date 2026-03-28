@@ -171,7 +171,7 @@ def _extract_permission_info(content: str) -> str:
     return "基础权限"
 
 
-def _parse_reference_doc(file_path: Path, category: str) -> Optional[Dict[str, Any]]:
+def _parse_reference_doc(file_path: Path, references_dir: Path, category: str) -> Optional[Dict[str, Any]]:
     """
     解析单个 reference 文档
     
@@ -185,6 +185,7 @@ def _parse_reference_doc(file_path: Path, category: str) -> Optional[Dict[str, A
     
     Args:
         file_path: Markdown 文件路径
+        references_dir: references 目录路径
         category: API 分类
     
     Returns:
@@ -260,6 +261,10 @@ def _parse_reference_doc(file_path: Path, category: str) -> Optional[Dict[str, A
         
         example = f"get_api_query('{api_name}', '{json.dumps(example_params, ensure_ascii=False)}')" if example_params else f"get_api_query('{api_name}')"
         
+        # 使用相对于 references 目录的相对路径，添加 references/ 前缀
+        relative_path = file_path.relative_to(references_dir)
+        source_file = "references/" + str(relative_path).replace('\\', '/')
+        
         return {
             'api_name': api_name,
             'description': description,
@@ -269,7 +274,7 @@ def _parse_reference_doc(file_path: Path, category: str) -> Optional[Dict[str, A
             'input_params': input_params,
             'output_params': output_params,
             'example': example,
-            'source_file': str(file_path)
+            'source_file': source_file
         }
     except Exception as e:
         print(f"解析 {file_path} 失败: {e}")
@@ -297,7 +302,7 @@ def generate_api_metadata() -> Dict[str, Any]:
             relative_path = md_file.relative_to(references_dir)
             category = str(relative_path.parent).replace('\\', '_').replace('/', '_')
             
-            parsed = _parse_reference_doc(md_file, category)
+            parsed = _parse_reference_doc(md_file, references_dir, category)
             if parsed:
                 api_name = parsed['api_name']
                 metadata[api_name] = parsed
@@ -305,7 +310,7 @@ def generate_api_metadata() -> Dict[str, Any]:
             print(f"解析 {md_file} 失败: {e}")
     
     return {
-        'version': '1.0.0',
+        'version': '1.0.1',
         'generated_at': datetime.now().isoformat(),
         'total_apis': len(metadata),
         'apis': metadata,

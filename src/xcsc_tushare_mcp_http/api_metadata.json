@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "generated_at": "2026-03-28T14:06:02.940881",
+  "version": "1.0.1",
+  "generated_at": "2026-03-28T21:13:57.701985",
   "total_apis": 91,
   "apis": {
     "bond_basic": {
@@ -368,7 +368,7 @@
         }
       ],
       "example": "get_api_query('bond_basic')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\债券\\中国债券基本资料.md"
+      "source_file": "references/债券/中国债券基本资料.md"
     },
     "cb_issue": {
       "api_name": "cb_issue",
@@ -580,7 +580,7 @@
         }
       ],
       "example": "get_api_query('cb_issue')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\债券\\可转债发行.md"
+      "source_file": "references/债券/可转债发行.md"
     },
     "bond_issue": {
       "api_name": "bond_issue",
@@ -992,7 +992,7 @@
         }
       ],
       "example": "get_api_query('bond_issue')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\债券\\可转债发行（备选）.md"
+      "source_file": "references/债券/可转债发行（备选）.md"
     },
     "cb_basic": {
       "api_name": "cb_basic",
@@ -1193,7 +1193,7 @@
         }
       ],
       "example": "get_api_query('cb_basic')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\债券\\可转债基本信息.md"
+      "source_file": "references/债券/可转债基本信息.md"
     },
     "cb_call": {
       "api_name": "cb_call",
@@ -1273,7 +1273,7 @@
         }
       ],
       "example": "get_api_query('cb_call')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\债券\\可转债强制赎回信息.md"
+      "source_file": "references/债券/可转债强制赎回信息.md"
     },
     "bond_repur_pr": {
       "api_name": "bond_repur_pr",
@@ -1335,7 +1335,7 @@
         }
       ],
       "example": "get_api_query('bond_repur_pr')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\债券\\可转债有条件回售价格和触发比例.md"
+      "source_file": "references/债券/可转债有条件回售价格和触发比例.md"
     },
     "bond_redem_pr": {
       "api_name": "bond_redem_pr",
@@ -1397,7 +1397,7 @@
         }
       ],
       "example": "get_api_query('bond_redem_pr')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\债券\\可转债有条件赎回价格和触发比例.md"
+      "source_file": "references/债券/可转债有条件赎回价格和触发比例.md"
     },
     "cb_daily": {
       "api_name": "cb_daily",
@@ -1489,7 +1489,7 @@
         }
       ],
       "example": "get_api_query('cb_daily')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\债券\\可转债行情.md"
+      "source_file": "references/债券/可转债行情.md"
     },
     "fund_nav": {
       "api_name": "fund_nav",
@@ -1565,7 +1565,7 @@
         }
       ],
       "example": "get_api_query('fund_nav')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\公募基金\\基金净值.md"
+      "source_file": "references/公募基金/基金净值.md"
     },
     "fund_div": {
       "api_name": "fund_div",
@@ -1682,7 +1682,7 @@
         }
       ],
       "example": "get_api_query('fund_div')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\公募基金\\基金分红.md"
+      "source_file": "references/公募基金/基金分红.md"
     },
     "fund_basic": {
       "api_name": "fund_basic",
@@ -1832,7 +1832,7 @@
         }
       ],
       "example": "get_api_query('fund_basic')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\公募基金\\基金列表.md"
+      "source_file": "references/公募基金/基金列表.md"
     },
     "fund_portfolio": {
       "api_name": "fund_portfolio",
@@ -1896,7 +1896,7 @@
         }
       ],
       "example": "get_api_query('fund_portfolio')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\公募基金\\基金持仓.md"
+      "source_file": "references/公募基金/基金持仓.md"
     },
     "fund_company": {
       "api_name": "fund_company",
@@ -1998,7 +1998,7 @@
         }
       ],
       "example": "get_api_query('fund_company')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\公募基金\\基金管理人.md"
+      "source_file": "references/公募基金/基金管理人.md"
     },
     "fund_manager": {
       "api_name": "fund_manager",
@@ -2096,7 +2096,7 @@
         }
       ],
       "example": "get_api_query('fund_manager')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\公募基金\\基金经理.md"
+      "source_file": "references/公募基金/基金经理.md"
     },
     "fund_daily": {
       "api_name": "fund_daily",
@@ -2188,7 +2188,7 @@
         }
       ],
       "example": "get_api_query('fund_daily')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\公募基金\\基金行情.md"
+      "source_file": "references/公募基金/基金行情.md"
     },
     "fund_share": {
       "api_name": "fund_share",
@@ -2262,7 +2262,7 @@
         }
       ],
       "example": "get_api_query('fund_share')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\公募基金\\基金规模.md"
+      "source_file": "references/公募基金/基金规模.md"
     },
     "fund_sector": {
       "api_name": "fund_sector",
@@ -2330,7 +2330,7 @@
         }
       ],
       "example": "get_api_query('fund_sector')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\共同基金\\中国Wind基金分类.md"
+      "source_file": "references/共同基金/中国Wind基金分类.md"
     },
     "fund_benchmark": {
       "api_name": "fund_benchmark",
@@ -2387,7 +2387,7 @@
         }
       ],
       "example": "get_api_query('fund_benchmark')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\共同基金\\中国共同基金业绩比较基准行情.md"
+      "source_file": "references/共同基金/中国共同基金业绩比较基准行情.md"
     },
     "fund_nav_1": {
       "api_name": "fund_nav_1",
@@ -2489,7 +2489,7 @@
         }
       ],
       "example": "get_api_query('fund_nav_1')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\共同基金\\中国共同基金净值.md"
+      "source_file": "references/共同基金/中国共同基金净值.md"
     },
     "fund_description": {
       "api_name": "fund_description",
@@ -2682,7 +2682,7 @@
         }
       ],
       "example": "get_api_query('fund_description')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\共同基金\\中国共同基金基本资料.md"
+      "source_file": "references/共同基金/中国共同基金基本资料.md"
     },
     "fund_manager_1": {
       "api_name": "fund_manager_1",
@@ -2774,7 +2774,7 @@
         }
       ],
       "example": "get_api_query('fund_manager_1')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\共同基金\\中国共同基金基金经理.md"
+      "source_file": "references/共同基金/中国共同基金基金经理.md"
     },
     "other_portfolio": {
       "api_name": "other_portfolio",
@@ -2834,7 +2834,7 @@
         }
       ],
       "example": "get_api_query('other_portfolio')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\共同基金\\中国共同基金投资组合——其他证券.md"
+      "source_file": "references/共同基金/中国共同基金投资组合——其他证券.md"
     },
     "fund_bond_portfolio": {
       "api_name": "fund_bond_portfolio",
@@ -2889,7 +2889,7 @@
         }
       ],
       "example": "get_api_query('fund_bond_portfolio')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\共同基金\\中国共同基金投资组合——持券明细.md"
+      "source_file": "references/共同基金/中国共同基金投资组合——持券明细.md"
     },
     "fund_stock_portfolio": {
       "api_name": "fund_stock_portfolio",
@@ -3013,7 +3013,7 @@
         }
       ],
       "example": "get_api_query('fund_stock_portfolio')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\共同基金\\中国共同基金投资组合——持股明细.md"
+      "source_file": "references/共同基金/中国共同基金投资组合——持股明细.md"
     },
     "fund_ind_portfolio": {
       "api_name": "fund_ind_portfolio",
@@ -3090,7 +3090,7 @@
         }
       ],
       "example": "get_api_query('fund_ind_portfolio')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\共同基金\\中国共同基金投资组合——行业配置.md"
+      "source_file": "references/共同基金/中国共同基金投资组合——行业配置.md"
     },
     "asset_portfolio": {
       "api_name": "asset_portfolio",
@@ -3282,7 +3282,7 @@
         }
       ],
       "example": "get_api_query('asset_portfolio')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\共同基金\\中国共同基金投资组合——资产配置.md"
+      "source_file": "references/共同基金/中国共同基金投资组合——资产配置.md"
     },
     "index_members": {
       "api_name": "index_members",
@@ -3344,7 +3344,7 @@
         }
       ],
       "example": "get_api_query('index_members')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\指数\\A股指数成份股.md"
+      "source_file": "references/指数/A股指数成份股.md"
     },
     "index_daily": {
       "api_name": "index_daily",
@@ -3446,7 +3446,7 @@
         }
       ],
       "example": "get_api_query('index_daily')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\指数\\A股指数日行情.md"
+      "source_file": "references/指数/A股指数日行情.md"
     },
     "index_dailybasic": {
       "api_name": "index_dailybasic",
@@ -3543,7 +3543,7 @@
         }
       ],
       "example": "get_api_query('index_dailybasic')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\指数\\大盘指数每日指标.md"
+      "source_file": "references/指数/大盘指数每日指标.md"
     },
     "daily_info": {
       "api_name": "daily_info",
@@ -3656,7 +3656,7 @@
         }
       ],
       "example": "get_api_query('daily_info')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\指数\\市场每日交易统计.md"
+      "source_file": "references/指数/市场每日交易统计.md"
     },
     "index_weekly": {
       "api_name": "index_weekly",
@@ -3748,7 +3748,7 @@
         }
       ],
       "example": "get_api_query('index_weekly')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\指数\\指数周线行情.md"
+      "source_file": "references/指数/指数周线行情.md"
     },
     "index_weight": {
       "api_name": "index_weight",
@@ -3805,7 +3805,7 @@
         }
       ],
       "example": "get_api_query('index_weight')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\指数\\指数成分和权重.md"
+      "source_file": "references/指数/指数成分和权重.md"
     },
     "index_monthly": {
       "api_name": "index_monthly",
@@ -3897,7 +3897,7 @@
         }
       ],
       "example": "get_api_query('index_monthly')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\指数\\指数月线行情.md"
+      "source_file": "references/指数/指数月线行情.md"
     },
     "sz_daily_info": {
       "api_name": "sz_daily_info",
@@ -3979,7 +3979,7 @@
         }
       ],
       "example": "get_api_query('sz_daily_info')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\指数\\深圳市场每日交易概况.md"
+      "source_file": "references/指数/深圳市场每日交易概况.md"
     },
     "opt_basic": {
       "api_name": "opt_basic",
@@ -4094,7 +4094,7 @@
         }
       ],
       "example": "get_api_query('opt_basic', '{\"exchange\": \"SSE\"}')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\期权\\期权合约信息.md"
+      "source_file": "references/期权/期权合约信息.md"
     },
     "opt_daily": {
       "api_name": "opt_daily",
@@ -4202,7 +4202,7 @@
         }
       ],
       "example": "get_api_query('opt_daily')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\期权\\期权日线行情.md"
+      "source_file": "references/期权/期权日线行情.md"
     },
     "fut_wsr": {
       "api_name": "fut_wsr",
@@ -4330,7 +4330,7 @@
         }
       ],
       "example": "get_api_query('fut_wsr')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\期货\\仓单日报.md"
+      "source_file": "references/期货/仓单日报.md"
     },
     "fut_mapping": {
       "api_name": "fut_mapping",
@@ -4382,7 +4382,7 @@
         }
       ],
       "example": "get_api_query('fut_mapping')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\期货\\期货主力与连续合约.md"
+      "source_file": "references/期货/期货主力与连续合约.md"
     },
     "fut_basic": {
       "api_name": "fut_basic",
@@ -4487,7 +4487,7 @@
         }
       ],
       "example": "get_api_query('fut_basic', '{\"exchange\": \"SSE\"}')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\期货\\期货合约信息.md"
+      "source_file": "references/期货/期货合约信息.md"
     },
     "fut_daily": {
       "api_name": "fut_daily",
@@ -4610,7 +4610,7 @@
         }
       ],
       "example": "get_api_query('fut_daily')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\期货\\期货日线行情.md"
+      "source_file": "references/期货/期货日线行情.md"
     },
     "fut_holding": {
       "api_name": "fut_holding",
@@ -4703,7 +4703,7 @@
         }
       ],
       "example": "get_api_query('fut_holding')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\期货\\每日持仓排名.md"
+      "source_file": "references/期货/每日持仓排名.md"
     },
     "fut_settle": {
       "api_name": "fut_settle",
@@ -4806,7 +4806,7 @@
         }
       ],
       "example": "get_api_query('fut_settle')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\期货\\每日结算参数.md"
+      "source_file": "references/期货/每日结算参数.md"
     },
     "stk_managers": {
       "api_name": "stk_managers",
@@ -4903,7 +4903,7 @@
         }
       ],
       "example": "get_api_query('stk_managers')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\基础数据\\上市公司管理层.md"
+      "source_file": "references/沪深股票/基础数据/上市公司管理层.md"
     },
     "stock_company": {
       "api_name": "stock_company",
@@ -5017,7 +5017,7 @@
         }
       ],
       "example": "get_api_query('stock_company')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\基础数据\\中国A股公司简介.md"
+      "source_file": "references/沪深股票/基础数据/中国A股公司简介.md"
     },
     "stock_basic": {
       "api_name": "stock_basic",
@@ -5135,7 +5135,7 @@
         }
       ],
       "example": "get_api_query('stock_basic')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\基础数据\\中国A股基本资料.md"
+      "source_file": "references/沪深股票/基础数据/中国A股基本资料.md"
     },
     "previous_name": {
       "api_name": "previous_name",
@@ -5202,7 +5202,7 @@
         }
       ],
       "example": "get_api_query('previous_name')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\基础数据\\中国A股证券曾用名.md"
+      "source_file": "references/沪深股票/基础数据/中国A股证券曾用名.md"
     },
     "trade_cal": {
       "api_name": "trade_cal",
@@ -5259,7 +5259,7 @@
         }
       ],
       "example": "get_api_query('trade_cal')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\基础数据\\交易日历.md"
+      "source_file": "references/沪深股票/基础数据/交易日历.md"
     },
     "stk_rewards": {
       "api_name": "stk_rewards",
@@ -5319,7 +5319,7 @@
         }
       ],
       "example": "get_api_query('stk_rewards', '{\"ts_code\": \"000001.SZ\"}')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\基础数据\\管理层薪酬和持股.md"
+      "source_file": "references/沪深股票/基础数据/管理层薪酬和持股.md"
     },
     "top10_floatholders": {
       "api_name": "top10_floatholders",
@@ -5361,7 +5361,7 @@
       ],
       "output_params": [],
       "example": "get_api_query('top10_floatholders', '{\"ts_code\": \"000001.SZ\"}')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\前十大流通股东.md"
+      "source_file": "references/沪深股票/市场参考数据/前十大流通股东.md"
     },
     "top10_holders": {
       "api_name": "top10_holders",
@@ -5403,7 +5403,7 @@
       ],
       "output_params": [],
       "example": "get_api_query('top10_holders', '{\"ts_code\": \"000001.SZ\"}')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\前十大股东.md"
+      "source_file": "references/沪深股票/市场参考数据/前十大股东.md"
     },
     "block_trade": {
       "api_name": "block_trade",
@@ -5475,7 +5475,7 @@
         }
       ],
       "example": "get_api_query('block_trade')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\大宗交易.md"
+      "source_file": "references/沪深股票/市场参考数据/大宗交易.md"
     },
     "concept": {
       "api_name": "concept",
@@ -5509,7 +5509,7 @@
         }
       ],
       "example": "get_api_query('concept')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\概念股分类表.md"
+      "source_file": "references/沪深股票/市场参考数据/概念股分类表.md"
     },
     "concept_detail": {
       "api_name": "concept_detail",
@@ -5564,7 +5564,7 @@
         }
       ],
       "example": "get_api_query('concept_detail')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\概念股明细列表.md"
+      "source_file": "references/沪深股票/市场参考数据/概念股明细列表.md"
     },
     "ggt_top10": {
       "api_name": "ggt_top10",
@@ -5606,7 +5606,7 @@
       ],
       "output_params": [],
       "example": "get_api_query('ggt_top10')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\港股通十大成交股.md"
+      "source_file": "references/沪深股票/市场参考数据/港股通十大成交股.md"
     },
     "stk_holdernumber": {
       "api_name": "stk_holdernumber",
@@ -5663,7 +5663,7 @@
         }
       ],
       "example": "get_api_query('stk_holdernumber')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\股东人数.md"
+      "source_file": "references/沪深股票/市场参考数据/股东人数.md"
     },
     "stk_holdertrade": {
       "api_name": "stk_holdertrade",
@@ -5777,7 +5777,7 @@
         }
       ],
       "example": "get_api_query('stk_holdertrade')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\股东增减持.md"
+      "source_file": "references/沪深股票/市场参考数据/股东增减持.md"
     },
     "pledge_detail": {
       "api_name": "pledge_detail",
@@ -5866,7 +5866,7 @@
         }
       ],
       "example": "get_api_query('pledge_detail')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\股权质押明细数据.md"
+      "source_file": "references/沪深股票/市场参考数据/股权质押明细数据.md"
     },
     "pledge_stat": {
       "api_name": "pledge_stat",
@@ -5920,7 +5920,7 @@
         }
       ],
       "example": "get_api_query('pledge_stat', '{\"ts_code\": \"000001.SZ\"}')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\股权质押统计数据.md"
+      "source_file": "references/沪深股票/市场参考数据/股权质押统计数据.md"
     },
     "repurchase": {
       "api_name": "repurchase",
@@ -5996,7 +5996,7 @@
         }
       ],
       "example": "get_api_query('repurchase')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\股票回购.md"
+      "source_file": "references/沪深股票/市场参考数据/股票回购.md"
     },
     "stk_account": {
       "api_name": "stk_account",
@@ -6052,7 +6052,7 @@
         }
       ],
       "example": "get_api_query('stk_account')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\股票开户数据.md"
+      "source_file": "references/沪深股票/市场参考数据/股票开户数据.md"
     },
     "stk_account_old": {
       "api_name": "stk_account_old",
@@ -6122,7 +6122,7 @@
         }
       ],
       "example": "get_api_query('stk_account_old')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\股票开户数据（旧）.md"
+      "source_file": "references/沪深股票/市场参考数据/股票开户数据（旧）.md"
     },
     "margin_detail": {
       "api_name": "margin_detail",
@@ -6214,7 +6214,7 @@
         }
       ],
       "example": "get_api_query('margin_detail')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\融资融券交易明细.md"
+      "source_file": "references/沪深股票/市场参考数据/融资融券交易明细.md"
     },
     "margin": {
       "api_name": "margin",
@@ -6296,7 +6296,7 @@
         }
       ],
       "example": "get_api_query('margin')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\融资融券交易汇总.md"
+      "source_file": "references/沪深股票/市场参考数据/融资融券交易汇总.md"
     },
     "top_inst": {
       "api_name": "top_inst",
@@ -6371,7 +6371,7 @@
         }
       ],
       "example": "get_api_query('top_inst', '{\"trade_date\": \"20240101\"}')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\龙虎榜机构明细.md"
+      "source_file": "references/沪深股票/市场参考数据/龙虎榜机构明细.md"
     },
     "top_list": {
       "api_name": "top_list",
@@ -6471,7 +6471,7 @@
         }
       ],
       "example": "get_api_query('top_list', '{\"trade_date\": \"20240101\"}')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\市场参考数据\\龙虎榜每日明细.md"
+      "source_file": "references/沪深股票/市场参考数据/龙虎榜每日明细.md"
     },
     "suspend": {
       "api_name": "suspend",
@@ -6537,7 +6537,7 @@
         }
       ],
       "example": "get_api_query('suspend')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\A股停复牌信息.md"
+      "source_file": "references/沪深股票/行情数据/A股停复牌信息.md"
     },
     "moneyflow": {
       "api_name": "moneyflow",
@@ -6674,7 +6674,7 @@
         }
       ],
       "example": "get_api_query('moneyflow')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\个股资金流向.md"
+      "source_file": "references/沪深股票/行情数据/个股资金流向.md"
     },
     "daily": {
       "api_name": "daily",
@@ -6811,7 +6811,7 @@
         }
       ],
       "example": "get_api_query('daily')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\中国A股日行情.md"
+      "source_file": "references/沪深股票/行情数据/中国A股日行情.md"
     },
     "stk_mins": {
       "api_name": "stk_mins",
@@ -6894,7 +6894,7 @@
         }
       ],
       "example": "get_api_query('stk_mins')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\分钟数据.md"
+      "source_file": "references/沪深股票/行情数据/分钟数据.md"
     },
     "weekly": {
       "api_name": "weekly",
@@ -6986,7 +6986,7 @@
         }
       ],
       "example": "get_api_query('weekly')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\周线行情.md"
+      "source_file": "references/沪深股票/行情数据/周线行情.md"
     },
     "monthly": {
       "api_name": "monthly",
@@ -7078,7 +7078,7 @@
         }
       ],
       "example": "get_api_query('monthly')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\月线行情.md"
+      "source_file": "references/沪深股票/行情数据/月线行情.md"
     },
     "daily_basic_ts": {
       "api_name": "daily_basic_ts",
@@ -7210,7 +7210,7 @@
         }
       ],
       "example": "get_api_query('daily_basic_ts')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\每日指标.md"
+      "source_file": "references/沪深股票/行情数据/每日指标.md"
     },
     "stk_limit": {
       "api_name": "stk_limit",
@@ -7272,7 +7272,7 @@
         }
       ],
       "example": "get_api_query('stk_limit')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\每日涨跌停价格.md"
+      "source_file": "references/沪深股票/行情数据/每日涨跌停价格.md"
     },
     "hk_hold": {
       "api_name": "hk_hold",
@@ -7356,7 +7356,7 @@
         }
       ],
       "example": "get_api_query('hk_hold')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\沪深港股通持股明细.md"
+      "source_file": "references/沪深股票/行情数据/沪深港股通持股明细.md"
     },
     "moneyflow_hsgt": {
       "api_name": "moneyflow_hsgt",
@@ -7386,7 +7386,7 @@
       ],
       "output_params": [],
       "example": "get_api_query('moneyflow_hsgt')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\沪深港通资金流向.md"
+      "source_file": "references/沪深股票/行情数据/沪深港通资金流向.md"
     },
     "hsgt_top10": {
       "api_name": "hsgt_top10",
@@ -7428,7 +7428,7 @@
       ],
       "output_params": [],
       "example": "get_api_query('hsgt_top10')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\沪深股通十大成交股.md"
+      "source_file": "references/沪深股票/行情数据/沪深股通十大成交股.md"
     },
     "limit_list_d": {
       "api_name": "limit_list_d",
@@ -7567,7 +7567,7 @@
         }
       ],
       "example": "get_api_query('limit_list_d')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\涨跌停和炸板数据.md"
+      "source_file": "references/沪深股票/行情数据/涨跌停和炸板数据.md"
     },
     "ggt_sh_daily": {
       "api_name": "ggt_sh_daily",
@@ -7628,7 +7628,7 @@
         }
       ],
       "example": "get_api_query('ggt_sh_daily')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\港股通(沪)每日成交.md"
+      "source_file": "references/沪深股票/行情数据/港股通(沪)每日成交.md"
     },
     "ggt_daily": {
       "api_name": "ggt_daily",
@@ -7705,7 +7705,7 @@
         }
       ],
       "example": "get_api_query('ggt_daily')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\港股通每日成交统计.md"
+      "source_file": "references/沪深股票/行情数据/港股通每日成交统计.md"
     },
     "ggt_monthly": {
       "api_name": "ggt_monthly",
@@ -7792,7 +7792,7 @@
         }
       ],
       "example": "get_api_query('ggt_monthly')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\港股通每月成交统计.md"
+      "source_file": "references/沪深股票/行情数据/港股通每月成交统计.md"
     },
     "adj_factor": {
       "api_name": "adj_factor",
@@ -7828,7 +7828,7 @@
       ],
       "output_params": [],
       "example": "get_api_query('adj_factor', '{\"ts_code\": \"000001.SZ\"}')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\行情数据\\股票复权因子.md"
+      "source_file": "references/沪深股票/行情数据/股票复权因子.md"
     },
     "express": {
       "api_name": "express",
@@ -8031,7 +8031,7 @@
         }
       ],
       "example": "get_api_query('express')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\财务数据\\业绩快报.md"
+      "source_file": "references/沪深股票/财务数据/业绩快报.md"
     },
     "forecast": {
       "api_name": "forecast",
@@ -8145,7 +8145,7 @@
         }
       ],
       "example": "get_api_query('forecast')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\财务数据\\业绩预告.md"
+      "source_file": "references/沪深股票/财务数据/业绩预告.md"
     },
     "fin_mainbz": {
       "api_name": "fin_mainbz",
@@ -8169,7 +8169,7 @@
       ],
       "output_params": [],
       "example": "get_api_query('fin_mainbz')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\财务数据\\主营业务构成.md"
+      "source_file": "references/沪深股票/财务数据/主营业务构成.md"
     },
     "dividend": {
       "api_name": "dividend",
@@ -8292,7 +8292,7 @@
         }
       ],
       "example": "get_api_query('dividend')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\财务数据\\分红送股.md"
+      "source_file": "references/沪深股票/财务数据/分红送股.md"
     },
     "income": {
       "api_name": "income",
@@ -8823,7 +8823,7 @@
         }
       ],
       "example": "get_api_query('income')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\财务数据\\利润表.md"
+      "source_file": "references/沪深股票/财务数据/利润表.md"
     },
     "cashflow": {
       "api_name": "cashflow",
@@ -9363,7 +9363,7 @@
         }
       ],
       "example": "get_api_query('cashflow')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\财务数据\\现金流量表.md"
+      "source_file": "references/沪深股票/财务数据/现金流量表.md"
     },
     "fina_audit": {
       "api_name": "fina_audit",
@@ -9441,7 +9441,7 @@
         }
       ],
       "example": "get_api_query('fina_audit', '{\"ts_code\": \"000001.SZ\"}')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\财务数据\\财务审计意见.md"
+      "source_file": "references/沪深股票/财务数据/财务审计意见.md"
     },
     "disclosure_date": {
       "api_name": "disclosure_date",
@@ -9508,7 +9508,7 @@
         }
       ],
       "example": "get_api_query('disclosure_date')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\财务数据\\财报披露计划.md"
+      "source_file": "references/沪深股票/财务数据/财报披露计划.md"
     },
     "balancesheet": {
       "api_name": "balancesheet",
@@ -10353,7 +10353,7 @@
         }
       ],
       "example": "get_api_query('balancesheet')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\财务数据\\资产负债表.md"
+      "source_file": "references/沪深股票/财务数据/资产负债表.md"
     },
     "fin_indicator": {
       "api_name": "fin_indicator",
@@ -11231,7 +11231,7 @@
         }
       ],
       "example": "get_api_query('fin_indicator')",
-      "source_file": "D:\\tushare\\xcsc-tushare-mcp-http\\src\\xcsc_tushare_mcp_http\\references\\沪深股票\\财务数据\\重要财务指标.md"
+      "source_file": "references/沪深股票/财务数据/重要财务指标.md"
     }
   }
 }

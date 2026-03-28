@@ -45,6 +45,7 @@ from .config import config
 from .tools import register_tools
 from .auth import create_auth_middleware
 from .metadata import load_api_metadata
+from . import __version__
 
 # 配置日志
 logging.basicConfig(
@@ -60,42 +61,40 @@ mcp = FastMCP(
     instructions="""
 XCSC Tushare MCP Server - 湘财证券金融数据接口服务
 
-本服务提供湘财证券(xcsc-tushare)的金融数据查询功能，包括：
+本服务提供湘财证券(XCSC Tushare)的金融数据查询功能，包括：
 - 沪深股票：基础数据、行情数据、财务数据、市场参考数据
-- 指数：指数行情、成分权重
-- 公募基金：基金列表、净值、持仓等
-- 共同基金：基金资料、净值、投资组合等
-- 期货：合约信息、日线行情、持仓排名等
+- 指数：指数行情、指数成分、成分权重、市场交易统计等
+- 公募基金：基金列表、净值、持仓、分红、管理人等
+- 共同基金：基金资料、净值、投资组合、业绩基准等
+- 期货：合约信息、日线行情、持仓排名、仓单日报、结算参数等
 - 期权：合约信息、日线行情
-- 债券：可转债基本信息、行情等
-
-使用前请确保已设置 XCSC_TUSHARE_TOKEN 环境变量。
+- 债券：中国债券基本资料、可转债基本信息、行情、发行、赎回回售信息等
 
 ## 🔧 可用工具
 
 本服务提供 **3 个核心工具**：
 
 ### 1. get_api_list()
-获取所有可用 API 的简化列表（只包含名称和描述）。
+获取所有 API 的列表信息（包含名称、描述、分类）。
 
 ### 2. get_api_doc(api_name)
 获取指定 API 的详细文档（参数、输出字段、示例）。
 
 ### 3. get_api_query(api_name, params)
-通用查询接口，调用底层 XCSC Tushare API。
+通用查询 API 接口，调用底层 XCSC Tushare API。
 
 ## 🚀 使用流程
 
-1. 调用 get_api_list() 查看所有可用 API
-2. 调用 get_api_doc(api_name) 获取参数说明
-3. 调用 get_api_query(api_name, params) 获取数据
+1. 调用 get_api_list() 查看所有 API 的列表信息（包含名称、描述、分类）
+2. 调用 get_api_doc(api_name) 获取指定 API 的详细文档（参数、输出字段、示例）
+3. 调用 get_api_query(api_name, params) 获取数据（params 必须是有效的 JSON 字符串）
 
 ## ⚠️ 注意事项
 
 1. api_name 统一：所有工具使用相同的 api_name
 2. 参数格式：params 必须是有效的 JSON 字符串
 3. 日期格式：YYYYMMDD，如 "20240101"
-4. 股票代码格式：代码.交易所，如 "000001.SZ"
+4. 股票代码：代码.交易所，如 "000001.SZ"、"600000.SH"
 """,
 )
 
@@ -122,10 +121,10 @@ def main():
     打印启动信息、配置认证中间件，并启动 HTTP 服务器。
     """
     logger.info(f"正在启动 {config.MCP_NAME}...")
-    logger.info(f"版本: 1.0.0")
+    logger.info(f"版本: {__version__}")
     
     print(f"正在启动 {config.MCP_NAME}...")
-    print(f"版本: 1.0.0")
+    print(f"版本: {__version__}")
     
     if config.XCSC_TUSHARE_TOKEN:
         logger.info(f"XCSC Tushare Token: {config.XCSC_TUSHARE_TOKEN[:10]}***")
