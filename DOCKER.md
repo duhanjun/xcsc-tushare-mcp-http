@@ -26,7 +26,7 @@ docker build -t xcsc-tushare-mcp-http:latest .
 
 ```bash
 docker run -d \
-  --name xcsc-tushare-mcp \
+  --name xcsc-tushare-mcp-http \
   -p 8000:8000 \
   -e XCSC_TUSHARE_TOKEN="your_token_here" \
   -e XCSC_TUSHARE_TIMEOUT=60 \
@@ -40,14 +40,14 @@ docker run -d \
 #### 3. 查看日志
 
 ```bash
-docker logs -f xcsc-tushare-mcp
+docker logs -f xcsc-tushare-mcp-http
 ```
 
 #### 4. 停止容器
 
 ```bash
-docker stop xcsc-tushare-mcp
-docker rm xcsc-tushare-mcp
+docker stop xcsc-tushare-mcp-http
+docker rm xcsc-tushare-mcp-http
 ```
 
 ### 方法二：使用 Docker Compose（推荐）
@@ -146,7 +146,7 @@ docker-compose restart
 
 检查日志：
 ```bash
-docker logs xcsc-tushare-mcp
+docker logs xcsc-tushare-mcp-http
 ```
 
 常见问题：
@@ -166,7 +166,7 @@ docker logs xcsc-tushare-mcp
 检查 API Key：
 ```bash
 # 查看自动生成的 API Key
-docker logs xcsc-tushare-mcp | grep "API Key"
+docker logs xcsc-tushare-mcp-http | grep "API Key"
 ```
 
 ## 构建优化
