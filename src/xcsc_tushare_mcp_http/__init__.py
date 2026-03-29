@@ -19,7 +19,7 @@ XCSC Tushare MCP HTTP 服务器包
     MCP_AUTH_ENABLED: 是否启用认证，默认 true
 """
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 __author__ = "HanjunDu"
 __email__ = "hanjun.du@outlook.com"
 

@@ -8,8 +8,14 @@ WORKDIR /app
 RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && \
     pip config set install.trusted-host mirrors.aliyun.com
 
-# 直接从 PyPI 安装
-RUN pip install --no-cache-dir xcsc-tushare-mcp-http
+# 复制项目配置文件
+COPY pyproject.toml ./
+
+# 复制源代码
+COPY src/ ./src/
+
+# 从本地项目安装
+RUN pip install --no-cache-dir .
 
 # 设置环境变量
 ENV PYTHONDONTWRITEBYTECODE=1 \
