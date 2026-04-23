@@ -1,29 +1,36 @@
 """
-XCSC Tushare MCP HTTP 服务器主模块
+XCSC Tushare MCP 服务器主模块
 
-该模块是 XCSC Tushare MCP 服务器的入口点，负责：
+该模块是 XCSC Tushare MCP 服务器的入口点，支持两种传输方式：
+1. stdio 模式（默认）：通过标准输入输出进行通信
+2. HTTP 模式：通过 HTTP 协议进行通信
+
+功能：
 1. 初始化 FastMCP 服务器
 2. 注册所有工具（get_api_list、get_api_doc、get_api_query）
-3. 配置认证中间件（API Key 认证）
-4. 启动 HTTP 服务器
+3. 根据配置选择传输方式启动
 
 启动方式：
-1. 安装后通过命令行启动：
+1. 安装后通过命令行启动（默认 stdio 模式）：
    $ xcsc-tushare-mcp-http
 
-2. 作为模块运行：
+2. 使用 HTTP 模式：
+   $ MCP_TRANSPORT=http xcsc-tushare-mcp-http
+
+3. 作为模块运行：
    $ python -m xcsc_tushare_mcp_http
 
-3. 直接运行 server.py：
+4. 直接运行 server.py：
    $ python src/xcsc_tushare_mcp_http/server.py
 
 环境变量配置：
     XCSC_TUSHARE_TOKEN: XCSC Tushare API Token（必填）
     XCSC_TUSHARE_SERVER: XCSC Tushare 服务器地址
-    MCP_HOST: 服务器监听地址，默认 0.0.0.0
-    MCP_PORT: 服务器监听端口，默认 8000
-    MCP_API_KEY: API 认证密钥
-    MCP_AUTH_ENABLED: 是否启用认证，默认 true
+    MCP_TRANSPORT: 传输方式，'stdio' 或 'http'，默认 'stdio'
+    MCP_HOST: 服务器监听地址，默认 0.0.0.0（仅 HTTP 模式）
+    MCP_PORT: 服务器监听端口，默认 8000（仅 HTTP 模式）
+    MCP_API_KEY: API 认证密钥（仅 HTTP 模式）
+    MCP_AUTH_ENABLED: 是否启用认证，默认 true（仅 HTTP 模式）
 """
 
 import logging
@@ -118,13 +125,15 @@ def main():
     """
     服务器主入口函数
     
-    打印启动信息、配置认证中间件，并启动 HTTP 服务器。
+    根据配置的传输方式启动相应的服务器。
     """
     logger.info(f"正在启动 {config.MCP_NAME}...")
     logger.info(f"版本: {__version__}")
+    logger.info(f"传输方式: {config.MCP_TRANSPORT}")
     
     print(f"正在启动 {config.MCP_NAME}...")
     print(f"版本: {__version__}")
+    print(f"传输方式: {config.MCP_TRANSPORT}")
     
     if config.XCSC_TUSHARE_TOKEN:
         logger.info(f"XCSC Tushare Token: {config.XCSC_TUSHARE_TOKEN[:10]}***")
@@ -134,9 +143,29 @@ def main():
         print("警告: 未设置 XCSC_TUSHARE_TOKEN!")
     
     logger.info(f"运行环境: {config.XCSC_ENV}")
-    logger.info(f"服务地址: http://{config.MCP_HOST}:{config.MCP_PORT}{config.MCP_PATH}")
     
     print(f"运行环境: {config.XCSC_ENV}")
+
+    if config.MCP_TRANSPORT == "stdio":
+        _run_stdio_mode()
+    else:
+        _run_http_mode()
+
+
+def _run_stdio_mode():
+    """
+    运行 stdio 模式
+    """
+    logger.info("启动 stdio 模式...")
+    print("启动 stdio 模式...")
+    mcp.run()
+
+
+def _run_http_mode():
+    """
+    运行 HTTP 模式
+    """
+    logger.info(f"服务地址: http://{config.MCP_HOST}:{config.MCP_PORT}{config.MCP_PATH}")
     print(f"服务地址: http://{config.MCP_HOST}:{config.MCP_PORT}{config.MCP_PATH}")
 
     if config.MCP_AUTH_ENABLED:

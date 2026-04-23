@@ -7,12 +7,13 @@
     XCSC_TUSHARE_TOKEN: XCSC Tushare API Token（必填）
     XCSC_TUSHARE_SERVER: XCSC Tushare 服务器地址，默认 http://tushare.xcsc.com:7172
     XCSC_ENV: 运行环境，默认 prd
-    MCP_HOST: 服务器监听地址，默认 0.0.0.0
-    MCP_PORT: 服务器监听端口，默认 8000
-    MCP_PATH: MCP 服务路径，默认 /mcp
+    MCP_TRANSPORT: 传输方式，可选 'stdio' 或 'http'，默认 'stdio'
+    MCP_HOST: 服务器监听地址，默认 0.0.0.0（仅 HTTP 模式）
+    MCP_PORT: 服务器监听端口，默认 8000（仅 HTTP 模式）
+    MCP_PATH: MCP 服务路径，默认 /mcp（仅 HTTP 模式）
     MCP_NAME: 服务名称，默认 xcsc-tushare-mcp-http
-    MCP_API_KEY: API 认证密钥，未设置时自动生成
-    MCP_AUTH_ENABLED: 是否启用认证，默认 true
+    MCP_API_KEY: API 认证密钥，未设置时自动生成（仅 HTTP 模式）
+    MCP_AUTH_ENABLED: 是否启用认证，默认 true（仅 HTTP 模式）
     MCP_LOG_LEVEL: 日志级别，默认 INFO
     MCP_AUTO_GENERATE_METADATA: 是否自动重新生成元数据，默认 true
     XCSC_TUSHARE_TIMEOUT: API 请求超时时间（秒），默认 60
@@ -63,6 +64,7 @@ class Config:
         XCSC_TUSHARE_TOKEN: XCSC Tushare API Token
         XCSC_TUSHARE_SERVER: XCSC Tushare 服务器地址
         XCSC_ENV: 运行环境
+        MCP_TRANSPORT: 传输方式，'stdio' 或 'http'
         MCP_HOST: 服务器监听地址
         MCP_PORT: 服务器监听端口
         MCP_PATH: MCP 服务路径
@@ -77,6 +79,7 @@ class Config:
     XCSC_TUSHARE_TOKEN: str = os.getenv("XCSC_TUSHARE_TOKEN", "")
     XCSC_TUSHARE_SERVER: str = os.getenv("XCSC_TUSHARE_SERVER", "http://tushare.xcsc.com:7172")
     XCSC_ENV: str = os.getenv("XCSC_ENV", "prd")
+    MCP_TRANSPORT: str = os.getenv("MCP_TRANSPORT", "stdio").lower()
     MCP_HOST: str = os.getenv("MCP_HOST", "0.0.0.0")
     MCP_PORT: int = int(os.getenv("MCP_PORT", "8000"))
     MCP_PATH: str = os.getenv("MCP_PATH", "/mcp")
@@ -86,6 +89,13 @@ class Config:
     MCP_LOG_LEVEL: str = os.getenv("MCP_LOG_LEVEL", "INFO")
     MCP_AUTO_GENERATE_METADATA: bool = os.getenv("MCP_AUTO_GENERATE_METADATA", "true").lower() == "true"
     XCSC_TUSHARE_TIMEOUT: int = int(os.getenv("XCSC_TUSHARE_TIMEOUT", "60"))
+    
+    def __post_init__(self):
+        """
+        初始化后验证传输方式
+        """
+        if self.MCP_TRANSPORT not in ["stdio", "http"]:
+            self.MCP_TRANSPORT = "stdio"
 
     @classmethod
     def from_env(cls) -> "Config":

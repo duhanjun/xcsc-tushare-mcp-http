@@ -1,11 +1,12 @@
 ## 项目简介
 
-xcsc-tushare-mcp-http 是一个基于 FastMCP 框架开发的 MCP（Model Context Protocol）服务器，通过 HTTP 协议为 AI 助手提供湘财证券 [Tushare](http://tushare.xcsc.com:7173/document/1) 金融数据接口。
+xcsc-tushare-mcp-http 是一个基于 FastMCP 框架开发的 MCP（Model Context Protocol）服务器，支持 **stdio** 和 **HTTP** 两种传输方式，为 AI 助手提供湘财证券 [Tushare](http://tushare.xcsc.com:7173/document/1) 金融数据接口。
 
 ### 主要特性
 
+- 🎯 **两种传输方式** - 支持 stdio（默认，推荐）和 HTTP 两种模式
 - 🚀 **HTTP 传输协议** - 支持 streamable-http 传输，适合远程部署
-- 🔐 **API Key 认证** - 支持 Bearer Token 认证，保护 API 安全
+- 🔐 **API Key 认证** - HTTP 模式支持 Bearer Token 认证，保护 API 安全
 - 📊 **丰富的数据类型** - 覆盖沪深股票、指数、公募基金、共同基金、期货、期权、债券等
 - 🔄 **动态元数据更新** - 自动检测 references/ 目录变化，重新生成 API 元数据
 - 🔧 **3 个核心工具** - 简化设计，通过 get_api_list、get_api_doc、get_api_query 完成所有操作
@@ -74,9 +75,32 @@ $env:XCSC_TUSHARE_TOKEN = "your_token_here"
 set XCSC_TUSHARE_TOKEN=your_token_here
 ```
 
-### 3. 认证配置（可选）
+### 3. 传输方式配置（可选）
 
-服务器默认启用 API Key 认证，未自定义 API Key 时，启动时会自动生成一个随机 API Key。
+服务器默认使用 **stdio 模式**（推荐），也可以使用 HTTP 模式。
+
+使用 stdio 模式（默认）：
+
+```bash
+# 无需额外配置，默认就是 stdio
+```
+
+使用 HTTP 模式：
+
+```bash
+# Linux/macOS
+export MCP_TRANSPORT=http
+
+# Windows PowerShell
+$env:MCP_TRANSPORT = "http"
+
+# Windows CMD
+set MCP_TRANSPORT=http
+```
+
+### 4. HTTP 模式认证配置（仅 HTTP 模式需要）
+
+HTTP 模式默认启用 API Key 认证，未自定义 API Key 时，启动时会自动生成一个随机 API Key。
 
 自定义 API Key（推荐）:
 
@@ -104,38 +128,79 @@ $env:MCP_AUTH_ENABLED = "false"
 set MCP_AUTH_ENABLED=false
 ```
 
-### 4. 其他配置（可选）
+### 5. 其他配置（可选）
 
 | 环境变量 | 描述 | 默认值 |
 |---------|------|--------|
 | `XCSC_TUSHARE_SERVER` | XCSC Tushare 服务器地址 | `http://tushare.xcsc.com:7172` |
 | `XCSC_ENV` | 运行环境 | `prd` |
-| `MCP_HOST` | 服务器监听地址 | `0.0.0.0` |
-| `MCP_PORT` | 服务器监听端口 | `8000` |
-| `MCP_PATH` | MCP 服务路径 | `/mcp` |
-| `MCP_AUTH_ENABLED` | 是否启用认证 | `true` |
+| `MCP_TRANSPORT` | 传输方式，`stdio` 或 `http` | `stdio` |
+| `MCP_HOST` | 服务器监听地址（仅 HTTP） | `0.0.0.0` |
+| `MCP_PORT` | 服务器监听端口（仅 HTTP） | `8000` |
+| `MCP_PATH` | MCP 服务路径（仅 HTTP） | `/mcp` |
+| `MCP_AUTH_ENABLED` | 是否启用认证（仅 HTTP） | `true` |
 | `MCP_LOG_LEVEL` | 日志级别 | `INFO` |
 
 ## 使用方法
 
-### 启动服务器
+### 方式一：使用 stdio 模式（推荐，最简单）
+
+这是最简单的方式，可以直接在 MCP 客户端配置中使用，无需单独启动服务器。
+
+#### 1. 配置 MCP 客户端：
+
+```json
+{
+  "mcpServers": {
+    "xcsc-tushare": {
+      "command": "uvx",
+      "args": [
+        "xcsc-tushare-mcp-http"
+      ],
+      "env": {
+        "XCSC_TUSHARE_TOKEN": "your_token_here"
+      }
+    }
+  }
+}
+```
+
+或者如果已经安装了包：
+
+```json
+{
+  "mcpServers": {
+    "xcsc-tushare": {
+      "command": "xcsc-tushare-mcp-http",
+      "env": {
+        "XCSC_TUSHARE_TOKEN": "your_token_here"
+      }
+    }
+  }
+}
+```
+
+### 方式二：使用 HTTP 模式
+
+如果需要远程部署或多个客户端共享，可以使用 HTTP 模式。
+
+#### 1. 启动服务器：
 
 ```bash
-# 安装后通过命令行启动
+# 设置必要的环境变量
+export XCSC_TUSHARE_TOKEN="your_token_here"
+export MCP_TRANSPORT=http
+
+# 启动服务器
 xcsc-tushare-mcp-http
-
-# 或作为模块运行
-python -m xcsc_tushare_mcp_http
-
-# 或直接运行 server.py
-python src/xcsc_tushare_mcp_http/server.py
 ```
 
 启动后会显示：
 
 ```
 正在启动 xcsc-tushare-mcp-http...
-版本: 1.0.1
+版本: 1.0.2
+传输方式: http
 XCSC Tushare Token: your_toke***
 运行环境: prd
 服务地址: http://0.0.0.0:8000/mcp
@@ -143,9 +208,7 @@ XCSC Tushare Token: your_toke***
 API Key: xxxxxxxx...xxxx
 ```
 
-### MCP 客户端配置
-
-将以下配置添加到您的 MCP 客户端：
+#### 2. 配置 MCP 客户端：
 
 ```json
 {

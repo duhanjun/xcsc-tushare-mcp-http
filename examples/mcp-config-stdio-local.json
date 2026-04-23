@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "xcsc-tushare": {
+      "command": "xcsc-tushare-mcp-http",
+      "env": {
+        "XCSC_TUSHARE_TOKEN": "your_token_here"
+      }
+    }
+  }
+}
