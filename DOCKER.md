@@ -2,7 +2,9 @@
 
 ## 概述
 
-本项目支持使用 Docker 容器化部署，方便在各种环境中快速启动 XCSC Tushare MCP HTTP 服务器。
+本项目支持使用 Docker 容器化部署，方便在各种环境中快速启动 XCSC Tushare MCP 服务器。
+
+Docker 部署主要用于 HTTP 模式，适合远程部署和多客户端共享。
 
 ## 文件说明
 
@@ -22,13 +24,14 @@
 docker build -t xcsc-tushare-mcp-http:latest .
 ```
 
-#### 2. 运行容器
+#### 2. 运行容器（HTTP 模式）
 
 ```bash
 docker run -d \
   --name xcsc-tushare-mcp-http \
   -p 8000:8000 \
   -e XCSC_TUSHARE_TOKEN="your_token_here" \
+  -e MCP_TRANSPORT=http \
   -e XCSC_TUSHARE_TIMEOUT=60 \
   -e MCP_API_KEY="your_api_key" \
   -e MCP_AUTH_ENABLED=true \
@@ -116,12 +119,13 @@ docker-compose restart
 | `XCSC_TUSHARE_SERVER` | 否 | `http://tushare.xcsc.com:7172` | 服务器地址 |
 | `XCSC_ENV` | 否 | `prd` | 运行环境 |
 | `XCSC_TUSHARE_TIMEOUT` | 否 | `60` | API 超时时间（秒） |
-| `MCP_HOST` | 否 | `0.0.0.0` | 监听地址 |
-| `MCP_PORT` | 否 | `8000` | 监听端口 |
-| `MCP_PATH` | 否 | `/mcp` | 服务路径 |
+| `MCP_TRANSPORT` | 否 | `stdio` | 传输方式，`stdio` 或 `http` |
+| `MCP_HOST` | 否 | `0.0.0.0` | 监听地址（仅 HTTP 模式） |
+| `MCP_PORT` | 否 | `8000` | 监听端口（仅 HTTP 模式） |
+| `MCP_PATH` | 否 | `/mcp` | 服务路径（仅 HTTP 模式） |
 | `MCP_NAME` | 否 | `xcsc-tushare-mcp-http` | 服务名称 |
-| `MCP_API_KEY` | 否 | 自动生成 | API 认证密钥 |
-| `MCP_AUTH_ENABLED` | 否 | `true` | 是否启用认证 |
+| `MCP_API_KEY` | 否 | 自动生成 | API 认证密钥（仅 HTTP 模式） |
+| `MCP_AUTH_ENABLED` | 否 | `true` | 是否启用认证（仅 HTTP 模式） |
 | `MCP_LOG_LEVEL` | 否 | `INFO` | 日志级别 |
 
 ## 镜像信息

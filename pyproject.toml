@@ -5,14 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "xcsc-tushare-mcp-http"
 version = "1.0.2"
-description = "XCSC Tushare MCP Server with HTTP transport for financial data"
+description = "XCSC Tushare MCP Server with stdio and HTTP transport for financial data"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
 authors = [
     {name = "HanjunDu", email = "hanjun.du@outlook.com"}
 ]
-keywords = ["xcsc-tushare", "mcp", "financial", "stock", "http", "tushare"]
+keywords = ["xcsc-tushare", "mcp", "financial", "stock", "http", "stdio", "tushare"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",

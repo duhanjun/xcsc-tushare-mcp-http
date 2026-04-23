@@ -1,4 +1,5 @@
-# XCSC Tushare MCP HTTP Server Docker Compose 配置
+# XCSC Tushare MCP Server Docker Compose 配置
+# Docker 部署主要用于 HTTP 模式
 # 使用说明:
 # 1. 设置环境变量: export XCSC_TUSHARE_TOKEN="your_token"
 # 2. 启动服务: docker-compose up -d
@@ -30,12 +31,13 @@ services:
       - XCSC_TUSHARE_TIMEOUT=${XCSC_TUSHARE_TIMEOUT:-60}
       
       # 可选: MCP 服务器配置
+      - MCP_TRANSPORT=${MCP_TRANSPORT:-http}  # Docker 默认使用 HTTP 模式
       - MCP_HOST=${MCP_HOST:-0.0.0.0}
       - MCP_PORT=${MCP_PORT:-8000}
       - MCP_PATH=${MCP_PATH:-/mcp}
       - MCP_NAME=${MCP_NAME:-xcsc-tushare-mcp-http}
       
-      # 可选: 认证配置
+      # 可选: 认证配置（仅 HTTP 模式）
       - MCP_API_KEY=${MCP_API_KEY}
       - MCP_AUTH_ENABLED=${MCP_AUTH_ENABLED:-true}
       - MCP_LOG_LEVEL=${MCP_LOG_LEVEL:-INFO}
