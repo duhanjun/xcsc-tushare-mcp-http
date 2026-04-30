@@ -2,8 +2,6 @@
 
 xcsc-tushare-mcp 是一个基于 FastMCP 框架开发的 MCP（Model Context Protocol）服务器，支持 **stdio** 和 **HTTP** 两种传输方式，为 AI 助手提供湘财证券 [Tushare](http://tushare.xcsc.com:7173/document/1) 金融数据接口。
 
-> 💡 **项目重命名说明**：原项目名为 `xcsc-tushare-mcp-http`，现已更名为 `xcsc-tushare-mcp` 以更好地反映其支持两种传输方式的特性。原命令 `xcsc-tushare-mcp-http` 仍然有效，保持向后兼容。
-
 ### 主要特性
 
 - 🎯 **两种传输方式** - 支持 stdio（默认，推荐）和 HTTP 两种模式
@@ -187,8 +185,6 @@ set MCP_AUTH_ENABLED=false
   }
 }
 ```
-
-> 💡 向后兼容：`xcsc-tushare-mcp-http` 命令仍然有效
 
 ### 方式二：使用 HTTP 模式
 

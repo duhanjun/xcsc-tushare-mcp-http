@@ -17,9 +17,6 @@ XCSC Tushare MCP 服务器主模块
 2. 使用 HTTP 模式：
    $ MCP_TRANSPORT=http xcsc-tushare-mcp
 
-3. 旧命令（向后兼容）：
-   $ xcsc-tushare-mcp-http
-
 3. 作为模块运行：
    $ python -m xcsc_tushare_mcp_http
 
