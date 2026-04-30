@@ -3,16 +3,16 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "xcsc-tushare-mcp-http"
-version = "1.0.2"
-description = "XCSC Tushare MCP Server with HTTP transport for financial data"
+name = "xcsc-tushare-mcp"
+version = "1.1.0"
+description = "XCSC Tushare MCP Server with stdio and HTTP transport for financial data"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
 authors = [
     {name = "HanjunDu", email = "hanjun.du@outlook.com"}
 ]
-keywords = ["xcsc-tushare", "mcp", "financial", "stock", "http", "tushare"]
+keywords = ["xcsc-tushare", "mcp", "financial", "stock", "http", "stdio", "tushare"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -40,16 +40,16 @@ dev = [
 ]
 
 [project.scripts]
-xcsc-tushare-mcp-http = "xcsc_tushare_mcp_http.server:main"
+xcsc-tushare-mcp = "xcsc_tushare_mcp.server:main"
 
 [project.urls]
-Homepage = "https://github.com/duhanjun/xcsc-tushare-mcp-http"
-Documentation = "https://github.com/duhanjun/xcsc-tushare-mcp-http#readme"
-Repository = "https://github.com/duhanjun/xcsc-tushare-mcp-http.git"
-Issues = "https://github.com/duhanjun/xcsc-tushare-mcp-http/issues"
+Homepage = "https://github.com/duhanjun/xcsc-tushare-mcp"
+Documentation = "https://github.com/duhanjun/xcsc-tushare-mcp#readme"
+Repository = "https://github.com/duhanjun/xcsc-tushare-mcp.git"
+Issues = "https://github.com/duhanjun/xcsc-tushare-mcp/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.package-data]
-xcsc_tushare_mcp_http = ["py.typed", "api_metadata.json", "references/**/*.md"]
+xcsc_tushare_mcp = ["py.typed", "api_metadata.json", "references/**/*.md"]

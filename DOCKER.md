@@ -2,7 +2,9 @@
 
 ## 概述
 
-本项目支持使用 Docker 容器化部署，方便在各种环境中快速启动 XCSC Tushare MCP HTTP 服务器。
+本项目支持使用 Docker 容器化部署，方便在各种环境中快速启动 XCSC Tushare MCP 服务器。
+
+Docker 部署主要用于 HTTP 模式，适合远程部署和多客户端共享。
 
 ## 文件说明
 
@@ -19,35 +21,36 @@
 #### 1. 构建镜像
 
 ```bash
-docker build -t xcsc-tushare-mcp-http:latest .
+docker build -t xcsc-tushare-mcp:latest .
 ```
 
-#### 2. 运行容器
+#### 2. 运行容器（HTTP 模式）
 
 ```bash
 docker run -d \
-  --name xcsc-tushare-mcp-http \
+  --name xcsc-tushare-mcp \
   -p 8000:8000 \
   -e XCSC_TUSHARE_TOKEN="your_token_here" \
+  -e MCP_TRANSPORT=http \
   -e XCSC_TUSHARE_TIMEOUT=60 \
   -e MCP_API_KEY="your_api_key" \
   -e MCP_AUTH_ENABLED=true \
   -e MCP_LOG_LEVEL=INFO \
   --restart unless-stopped \
-  xcsc-tushare-mcp-http:latest
+  xcsc-tushare-mcp:latest
 ```
 
 #### 3. 查看日志
 
 ```bash
-docker logs -f xcsc-tushare-mcp-http
+docker logs -f xcsc-tushare-mcp
 ```
 
 #### 4. 停止容器
 
 ```bash
-docker stop xcsc-tushare-mcp-http
-docker rm xcsc-tushare-mcp-http
+docker stop xcsc-tushare-mcp
+docker rm xcsc-tushare-mcp
 ```
 
 ### 方法二：使用 Docker Compose（推荐）
@@ -66,6 +69,8 @@ XCSC_TUSHARE_TOKEN=your_token_here
 # XCSC_TUSHARE_TIMEOUT=60
 # MCP_HOST=0.0.0.0
 # MCP_PORT=8000
+# MCP_PATH=/mcp
+# MCP_NAME=xcsc-tushare-mcp
 # MCP_AUTH_ENABLED=true
 # MCP_LOG_LEVEL=INFO
 ```
@@ -116,12 +121,13 @@ docker-compose restart
 | `XCSC_TUSHARE_SERVER` | 否 | `http://tushare.xcsc.com:7172` | 服务器地址 |
 | `XCSC_ENV` | 否 | `prd` | 运行环境 |
 | `XCSC_TUSHARE_TIMEOUT` | 否 | `60` | API 超时时间（秒） |
-| `MCP_HOST` | 否 | `0.0.0.0` | 监听地址 |
-| `MCP_PORT` | 否 | `8000` | 监听端口 |
-| `MCP_PATH` | 否 | `/mcp` | 服务路径 |
-| `MCP_NAME` | 否 | `xcsc-tushare-mcp-http` | 服务名称 |
-| `MCP_API_KEY` | 否 | 自动生成 | API 认证密钥 |
-| `MCP_AUTH_ENABLED` | 否 | `true` | 是否启用认证 |
+| `MCP_TRANSPORT` | 否 | `stdio` | 传输方式，`stdio` 或 `http`（Docker 默认 `http`） |
+| `MCP_HOST` | 否 | `0.0.0.0` | 监听地址（仅 HTTP 模式） |
+| `MCP_PORT` | 否 | `8000` | 监听端口（仅 HTTP 模式） |
+| `MCP_PATH` | 否 | `/mcp` | 服务路径（仅 HTTP 模式） |
+| `MCP_NAME` | 否 | `xcsc-tushare-mcp` | 服务名称 |
+| `MCP_API_KEY` | 否 | 自动生成 | API 认证密钥（仅 HTTP 模式） |
+| `MCP_AUTH_ENABLED` | 否 | `true` | 是否启用认证（仅 HTTP 模式） |
 | `MCP_LOG_LEVEL` | 否 | `INFO` | 日志级别 |
 
 ## 镜像信息
@@ -146,7 +152,7 @@ docker-compose restart
 
 检查日志：
 ```bash
-docker logs xcsc-tushare-mcp-http
+docker logs xcsc-tushare-mcp
 ```
 
 常见问题：
@@ -166,7 +172,7 @@ docker logs xcsc-tushare-mcp-http
 检查 API Key：
 ```bash
 # 查看自动生成的 API Key
-docker logs xcsc-tushare-mcp-http | grep "API Key"
+docker logs xcsc-tushare-mcp | grep "API Key"
 ```
 
 ## 构建优化
@@ -187,7 +193,8 @@ FROM python:3.12-slim
 COPY --from=builder /root/.local /root/.local
 COPY --from=builder /app/src /app/src
 ENV PATH=/root/.local/bin:$PATH
-CMD ["xcsc-tushare-mcp-http"]
+ENV MCP_TRANSPORT=http
+CMD ["xcsc-tushare-mcp"]
 ```
 
 ## 安全建议

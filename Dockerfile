@@ -1,4 +1,4 @@
-# XCSC Tushare MCP HTTP Server Docker Image
+# XCSC Tushare MCP Server Docker Image
 
 FROM python:3.12-slim
 
@@ -21,12 +21,15 @@ RUN pip install --no-cache-dir .
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
-# 暴露服务端口
+# 暴露服务端口（仅 HTTP 模式使用）
 EXPOSE 8000
 
-# 健康检查
+# 健康检查（仅 HTTP 模式使用）
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/mcp')" || exit 1
 
+# 默认使用 HTTP 模式（Docker 部署通常使用 HTTP 模式）
+ENV MCP_TRANSPORT=http
+
 # 启动命令
-CMD ["xcsc-tushare-mcp-http"]
+CMD ["xcsc-tushare-mcp"]
