@@ -41,7 +41,6 @@ dev = [
 
 [project.scripts]
 xcsc-tushare-mcp = "xcsc_tushare_mcp_http.server:main"
-xcsc-tushare-mcp-http = "xcsc_tushare_mcp_http.server:main"
 
 [project.urls]
 Homepage = "https://github.com/duhanjun/xcsc-tushare-mcp-http"
