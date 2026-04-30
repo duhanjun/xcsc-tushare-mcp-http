@@ -4,7 +4,7 @@
 提供 API Key 认证功能，支持 Bearer Token 和 Basic 认证方式。
 
 使用示例：
-    >>> from xcsc_tushare_mcp_http.auth import create_auth_middleware
+    >>> from xcsc_tushare_mcp.auth import create_auth_middleware
     >>> app = create_auth_middleware(app, api_key="your_key", auth_enabled=True)
 
 支持的认证方式：

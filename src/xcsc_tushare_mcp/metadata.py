@@ -13,7 +13,7 @@
 服务器启动时会自动检测变化并重新生成元数据。
 
 使用示例：
-    >>> from xcsc_tushare_mcp_http.metadata import load_api_metadata
+    >>> from xcsc_tushare_mcp.metadata import load_api_metadata
     >>> metadata = load_api_metadata()
     >>> print(f"共有 {metadata['total_apis']} 个 API")
     >>> 

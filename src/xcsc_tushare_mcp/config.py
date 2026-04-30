@@ -11,7 +11,7 @@
     MCP_HOST: 服务器监听地址，默认 0.0.0.0（仅 HTTP 模式）
     MCP_PORT: 服务器监听端口，默认 8000（仅 HTTP 模式）
     MCP_PATH: MCP 服务路径，默认 /mcp（仅 HTTP 模式）
-    MCP_NAME: 服务名称，默认 xcsc-tushare-mcp-http
+    MCP_NAME: 服务名称，默认 xcsc-tushare-mcp
     MCP_API_KEY: API 认证密钥，未设置时自动生成（仅 HTTP 模式）
     MCP_AUTH_ENABLED: 是否启用认证，默认 true（仅 HTTP 模式）
     MCP_LOG_LEVEL: 日志级别，默认 INFO
@@ -19,7 +19,7 @@
     XCSC_TUSHARE_TIMEOUT: API 请求超时时间（秒），默认 60
 
 使用示例：
-    >>> from xcsc_tushare_mcp_http.config import config
+    >>> from xcsc_tushare_mcp.config import config
     >>> print(config.MCP_HOST)
     '0.0.0.0'
 """
