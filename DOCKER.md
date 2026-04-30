@@ -150,7 +150,7 @@ docker-compose restart
 
 检查日志：
 ```bash
-docker logs xcsc-tushare-mcp-http
+docker logs xcsc-tushare-mcp
 ```
 
 常见问题：
@@ -170,7 +170,7 @@ docker logs xcsc-tushare-mcp-http
 检查 API Key：
 ```bash
 # 查看自动生成的 API Key
-docker logs xcsc-tushare-mcp-http | grep "API Key"
+docker logs xcsc-tushare-mcp | grep "API Key"
 ```
 
 ## 构建优化
@@ -191,7 +191,7 @@ FROM python:3.12-slim
 COPY --from=builder /root/.local /root/.local
 COPY --from=builder /app/src /app/src
 ENV PATH=/root/.local/bin:$PATH
-CMD ["xcsc-tushare-mcp-http"]
+CMD ["xcsc-tushare-mcp"]
 ```
 
 ## 安全建议

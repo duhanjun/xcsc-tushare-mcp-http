@@ -40,7 +40,7 @@ dev = [
 ]
 
 [project.scripts]
-xcsc-tushare-mcp = "xcsc_tushare_mcp_http.server:main"
+xcsc-tushare-mcp = "xcsc_tushare_mcp.server:main"
 
 [project.urls]
 Homepage = "https://github.com/duhanjun/xcsc-tushare-mcp-http"
@@ -52,4 +52,4 @@ Issues = "https://github.com/duhanjun/xcsc-tushare-mcp-http/issues"
 where = ["src"]
 
 [tool.setuptools.package-data]
-xcsc_tushare_mcp_http = ["py.typed", "api_metadata.json", "references/**/*.md"]
+xcsc_tushare_mcp = ["py.typed", "api_metadata.json", "references/**/*.md"]

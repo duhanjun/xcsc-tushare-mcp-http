@@ -18,10 +18,10 @@ XCSC Tushare MCP 服务器主模块
    $ MCP_TRANSPORT=http xcsc-tushare-mcp
 
 3. 作为模块运行：
-   $ python -m xcsc_tushare_mcp_http
+   $ python -m xcsc_tushare_mcp
 
 4. 直接运行 server.py：
-   $ python src/xcsc_tushare_mcp_http/server.py
+   $ python src/xcsc_tushare_mcp/server.py
 
 环境变量配置：
     XCSC_TUSHARE_TOKEN: XCSC Tushare API Token（必填）
@@ -42,7 +42,7 @@ if __name__ == "__main__" and __package__ is None:
     file = Path(__file__).resolve()
     root = file.parent.parent.parent
     sys.path.insert(0, str(root / "src"))
-    __package__ = "xcsc_tushare_mcp_http"
+    __package__ = "xcsc_tushare_mcp"
 
 from fastmcp import FastMCP
 import xcsc_tushare as ts

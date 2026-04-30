@@ -17,7 +17,7 @@ xcsc-tushare-mcp 是一个基于 FastMCP 框架开发的 MCP（Model Context Pro
 ```
 xcsc-tushare-mcp/
 ├── src/
-│   └── xcsc_tushare_mcp_http/      # 主包目录（包名保持不变）
+│   └── xcsc_tushare_mcp/           # 主包目录
 │       ├── __init__.py            # 包初始化
 │       ├── __main__.py            # 命令行入口
 │       ├── server.py              # 服务器主模块
@@ -368,14 +368,14 @@ API Key: xxxxxxxx...xxxx
 
 ```bash
 # 克隆项目
-git clone https://github.com/duhanjun/xcsc-tushare-mcp-http.git
-cd xcsc-tushare-mcp-http
+git clone https://github.com/duhanjun/xcsc-tushare-mcp.git
+cd xcsc-tushare-mcp
 
 # 安装开发依赖
 pip install -e ".[dev]"
 
 # 运行服务
-python -m xcsc_tushare_mcp_http
+python -m xcsc_tushare_mcp
 ```
 
 ### 打包发布
