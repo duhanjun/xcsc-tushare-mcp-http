@@ -83,7 +83,7 @@ class Config:
     MCP_HOST: str = os.getenv("MCP_HOST", "0.0.0.0")
     MCP_PORT: int = int(os.getenv("MCP_PORT", "8000"))
     MCP_PATH: str = os.getenv("MCP_PATH", "/mcp")
-    MCP_NAME: str = os.getenv("MCP_NAME", "xcsc-tushare-mcp-http")
+    MCP_NAME: str = os.getenv("MCP_NAME", "xcsc-tushare-mcp")
     MCP_API_KEY: str = _get_or_generate_api_key()
     MCP_AUTH_ENABLED: bool = os.getenv("MCP_AUTH_ENABLED", "true").lower() == "true"
     MCP_LOG_LEVEL: str = os.getenv("MCP_LOG_LEVEL", "INFO")

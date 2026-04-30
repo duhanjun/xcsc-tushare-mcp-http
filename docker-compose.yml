@@ -13,8 +13,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: xcsc-tushare-mcp-http:latest
-    container_name: xcsc-tushare-mcp-http
+    image: xcsc-tushare-mcp:latest
+    container_name: xcsc-tushare-mcp
     
     # 端口映射
     ports:
@@ -35,7 +35,7 @@ services:
       - MCP_HOST=${MCP_HOST:-0.0.0.0}
       - MCP_PORT=${MCP_PORT:-8000}
       - MCP_PATH=${MCP_PATH:-/mcp}
-      - MCP_NAME=${MCP_NAME:-xcsc-tushare-mcp-http}
+      - MCP_NAME=${MCP_NAME:-xcsc-tushare-mcp}
       
       # 可选: 认证配置（仅 HTTP 模式）
       - MCP_API_KEY=${MCP_API_KEY}

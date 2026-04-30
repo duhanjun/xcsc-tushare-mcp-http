@@ -3,8 +3,8 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "xcsc-tushare-mcp-http"
-version = "1.0.2"
+name = "xcsc-tushare-mcp"
+version = "1.1.0"
 description = "XCSC Tushare MCP Server with stdio and HTTP transport for financial data"
 readme = "README.md"
 license = "MIT"
@@ -40,6 +40,7 @@ dev = [
 ]
 
 [project.scripts]
+xcsc-tushare-mcp = "xcsc_tushare_mcp_http.server:main"
 xcsc-tushare-mcp-http = "xcsc_tushare_mcp_http.server:main"
 
 [project.urls]

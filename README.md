@@ -1,6 +1,8 @@
 ## 项目简介
 
-xcsc-tushare-mcp-http 是一个基于 FastMCP 框架开发的 MCP（Model Context Protocol）服务器，支持 **stdio** 和 **HTTP** 两种传输方式，为 AI 助手提供湘财证券 [Tushare](http://tushare.xcsc.com:7173/document/1) 金融数据接口。
+xcsc-tushare-mcp 是一个基于 FastMCP 框架开发的 MCP（Model Context Protocol）服务器，支持 **stdio** 和 **HTTP** 两种传输方式，为 AI 助手提供湘财证券 [Tushare](http://tushare.xcsc.com:7173/document/1) 金融数据接口。
+
+> 💡 **项目重命名说明**：原项目名为 `xcsc-tushare-mcp-http`，现已更名为 `xcsc-tushare-mcp` 以更好地反映其支持两种传输方式的特性。原命令 `xcsc-tushare-mcp-http` 仍然有效，保持向后兼容。
 
 ### 主要特性
 
@@ -15,9 +17,9 @@ xcsc-tushare-mcp-http 是一个基于 FastMCP 框架开发的 MCP（Model Contex
 ## 项目结构
 
 ```
-xcsc-tushare-mcp-http/
+xcsc-tushare-mcp/
 ├── src/
-│   └── xcsc_tushare_mcp_http/      # 主包目录
+│   └── xcsc_tushare_mcp_http/      # 主包目录（包名保持不变）
 │       ├── __init__.py            # 包初始化
 │       ├── __main__.py            # 命令行入口
 │       ├── server.py              # 服务器主模块
@@ -45,14 +47,20 @@ xcsc-tushare-mcp-http/
 ### 通过 pip 安装
 
 ```bash
-pip install xcsc-tushare-mcp-http
+pip install xcsc-tushare-mcp
+```
+
+### 通过 UVX 直接运行（推荐）
+
+```bash
+uvx xcsc-tushare-mcp
 ```
 
 ### 下载源码安装
 
 ```bash
-git clone https://github.com/duhanjun/xcsc-tushare-mcp-http.git
-cd xcsc-tushare-mcp-http
+git clone https://github.com/duhanjun/xcsc-tushare-mcp.git
+cd xcsc-tushare-mcp
 pip install -e .
 ```
 
@@ -155,7 +163,7 @@ set MCP_AUTH_ENABLED=false
     "xcsc-tushare": {
       "command": "uvx",
       "args": [
-        "xcsc-tushare-mcp-http"
+        "xcsc-tushare-mcp"
       ],
       "env": {
         "XCSC_TUSHARE_TOKEN": "your_token_here"
@@ -171,7 +179,7 @@ set MCP_AUTH_ENABLED=false
 {
   "mcpServers": {
     "xcsc-tushare": {
-      "command": "xcsc-tushare-mcp-http",
+      "command": "xcsc-tushare-mcp",
       "env": {
         "XCSC_TUSHARE_TOKEN": "your_token_here"
       }
@@ -179,6 +187,8 @@ set MCP_AUTH_ENABLED=false
   }
 }
 ```
+
+> 💡 向后兼容：`xcsc-tushare-mcp-http` 命令仍然有效
 
 ### 方式二：使用 HTTP 模式
 
@@ -192,14 +202,14 @@ export XCSC_TUSHARE_TOKEN="your_token_here"
 export MCP_TRANSPORT=http
 
 # 启动服务器
-xcsc-tushare-mcp-http
+xcsc-tushare-mcp
 ```
 
 启动后会显示：
 
 ```
-正在启动 xcsc-tushare-mcp-http...
-版本: 1.0.2
+正在启动 xcsc-tushare-mcp...
+版本: 1.1.0
 传输方式: http
 XCSC Tushare Token: your_toke***
 运行环境: prd
